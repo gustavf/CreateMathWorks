@@ -15,7 +15,7 @@
 <meta charset="UTF-8" />
 <style type="text/css">
     table, td, th {
-        border: 100px solid white; font-size: 30px;
+        border: 80px solid white; font-size: 20px;
     }
     
 </style>
@@ -44,6 +44,24 @@
                     <p>@mathDiv[i]</p>
                 }
             </td>
+
+                        <td>
+                @for (var i = 50; i < 75; i++)
+                {
+                    <p>@mathMulti[i]</p>
+                    <p>@mathDiv[i]</p>
+
+                }
+            </td>
+
+            <td>
+                @for (var i = 75; i < 100; i++)
+                {
+                    <p>@mathMulti[i]</p>
+                    <p>@mathDiv[i]</p>
+                }
+            </td>
+
         </tr>
     </table>
 

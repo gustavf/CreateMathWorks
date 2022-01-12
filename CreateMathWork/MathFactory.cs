@@ -18,7 +18,7 @@ namespace CreateMathWork
 
             //for (int count = 0; count < numberOfTests; count++)
             {
-                for (int i = 0; i < 50; i++)
+                for (int i = 0; i < 100; i++)
                 {
                     int index = random.Next(alldivision.Count());
                     test.Add(alldivision[index]);
