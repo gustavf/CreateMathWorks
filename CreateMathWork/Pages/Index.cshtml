@@ -5,10 +5,14 @@
 
     string ignoreMult = HttpContext.Request.Query["ignoremult"].ToString();
     string ignoreDiv = HttpContext.Request.Query["ignorediv"].ToString();
+    string max = HttpContext.Request.Query["max"].ToString();
+    if (string.IsNullOrEmpty(max)) max = "" + 20;
+
+    int maxInt = int.Parse(max);
 
     var factory = new MathFactory();
-    var mathMulti = factory.GetMathWork(true, ignoreMult is null ? null : ignoreMult);
-    var mathDiv = factory.GetMathWork(false, ignoreDiv is null ? null : ignoreDiv);
+    var mathMulti = factory.GetMathWork(true, maxInt, ignoreMult is null ? null : ignoreMult);
+    var mathDiv = factory.GetMathWork(false, maxInt, ignoreDiv is null ? null : ignoreDiv);
 }
 
 <head>
@@ -22,7 +26,7 @@
   </head>
 
 <div class="text-center">
-    <h3 class="display-4">Welcome! ?ignoremult=a,b to ignore</h3>
+    <h3 class="display-4">Welcome! Use max, ignoremul and ignorediv</h3>
 </div>
 
 <center>
