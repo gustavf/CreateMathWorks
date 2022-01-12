@@ -1,0 +1,49 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+
+    //var c = new Random().Next(10);
+    var factory = new MathFactory();
+    var mathMulti = factory.GetMathWork(true);
+    var mathDiv = factory.GetMathWork(false);
+}
+
+<head>
+<meta charset="UTF-8" />
+<style type="text/css">
+    table, td, th {
+        border: 110px solid white; font-size: 35px;
+    }
+    
+</style>
+  </head>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+</div>
+
+<center>
+    <table>
+        <tr>
+            <td>
+                @for (var i = 0; i < 25; i++)
+                {
+                    <p>@mathMulti[i]</p>
+                    <p>@mathDiv[i]</p>
+
+                }
+            </td>
+
+            <td>
+                @for (var i = 25; i < 50; i++)
+                {
+                    <p>@mathMulti[i]</p>
+                    <p>@mathDiv[i]</p>
+                }
+            </td>
+        </tr>
+    </table>
+
+</center>
